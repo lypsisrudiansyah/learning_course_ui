@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:learning_course_ui/constants/colors.dart';
 import 'package:learning_course_ui/models/course_model.dart';
-import 'package:learning_course_ui/screens/home/widget/category_title.dart';
-import 'package:learning_course_ui/screens/home/widget/course_item.dart';
 import 'package:learning_course_ui/screens/home/widget/emoji_text.dart';
+import 'package:learning_course_ui/screens/home/widget/feature_course.dart';
 import 'package:learning_course_ui/screens/home/widget/search_input.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,11 +19,11 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
-          children: [
-            const EmojiText(),
-            const SearchInput(),
-            const CategoryTitle('Top of the week', 'View All'),
-            CourseItem(course: courses.first),
+          children: const [
+            EmojiText(),
+            SearchInput(),
+            // CourseItem(course: courses[0]),
+            FeatureCourse(),
           ],
         ),
       ),
