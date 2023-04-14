@@ -15,6 +15,8 @@ class CourseModel {
   static List<CourseModel> generateCourses() {
     return [
       CourseModel(author: "John Bruh", authorImg: 'assets/images/author1.png', title: "Mastering IOT", imageUrl: 'assets/images/img1.jpg'),
+      CourseModel(author: "Rudiansyah", authorImg: 'assets/images/author2.png', title: "Let's Build IOT Nowadays ", imageUrl: 'assets/images/img2.jpg'),
+      CourseModel(author: "Rudiansyah", authorImg: 'assets/images/author2.png', title: "Be an IT Guy", imageUrl: 'assets/images/img3.jpg'),
     ];
   }
 }
