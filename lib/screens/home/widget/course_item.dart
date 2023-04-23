@@ -22,13 +22,14 @@ class CourseItem extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
                     ),
                     child: Image.asset(
+                      width: 250,
                       course.imageUrl,
                       fit: BoxFit.fitWidth,
                     ),
@@ -56,12 +57,15 @@ class CourseItem extends StatelessWidget {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 5),
                         Row(
                           children: [
                             Text(
                               course.title,
+                              maxLines: 1,
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.ellipsis,
                                 fontSize: 18.0,
                                 color: kFont,
                               ),
@@ -72,12 +76,15 @@ class CourseItem extends StatelessWidget {
                               height: 5,
                               decoration: const BoxDecoration(color: kFontLight, shape: BoxShape.circle),
                             ),
-                            const Text(
-                              "3h 55min",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14.0,
-                                color: kFont,
+                            const Flexible(
+                              child: Text(
+                                "3h 55min",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  overflow: TextOverflow.ellipsis,
+                                  fontSize: 14.0,
+                                  color: kFontLight,
+                                ),
                               ),
                             ),
                           ],
@@ -88,7 +95,22 @@ class CourseItem extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
+          Positioned(
+            bottom: 110,
+            right: 20,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text("Start"),
+            ),
+          ),
+          // child: ElevatedButton(onPressed: () {}, child: const Text("Start"),))
         ],
       ),
     );
